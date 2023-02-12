@@ -1,26 +1,32 @@
-# Custom CSS
+# Submit and CSRF
 
-## Code
+## Check valid nonce and user permission
 
 ```php
-$mainPageHook = add_menu_page( 
-    string $page_title, 
-    string $menu_title, 
-    string $capability, 
-    string $menu_slug, 
-    callable $callback = '', 
-    string $icon_url = '', 
-    int|float $position = null);
-add_action("load-{$mainPageHook}", [$this, 'mainPageAssets']);
-
-function mainPageAssets() {
-    wp_enqueue_style('filterAdminCSS', plugin_dir_url(__FILE__) . 'styles.css');
+if(wp_verify_nonce($_POST['ourNonce'], 'saveFilterWors') && current_user_can('manage_options')) {
+    // Update code
+} else {
+    // Error code
 }
+```
+
+## Update 'wp_options' table
+
+```php
+update_option('plugin_words_to_filter', sanitize_text_field($_POST['plugin_words_to_filter']));
+```
+
+## Set CSRF Token
+
+```php
+wp_nonce_field('saveFilterWors', 'ourNonce')
 ```
 
 ## Noticeable
 
 | Function name | Description |
 | ------------- | ----------- |
-| load-{$mainPageHook} | Load when the hook execute |
-| wp_enqueue_style | Add stylesheet |
+| wp_verify_nonce() | To check valid nonce or not |
+| current_user_can() | To check user has permission to perform that action or not |
+| update_option() | To update or insert |
+| wp_nonce_field() | Set CSRF token |
