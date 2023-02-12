@@ -1,0 +1,52 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Our Test Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-12 11:49+0000\n"
+"PO-Revision-Date: 2023-02-12 11:56+0000\n"
+"Last-Translator: \n"
+"Language-Team: Bengali (Bangladesh)\n"
+"Language: bn_BD\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.3; wp-6.1.1\n"
+"X-Domain: wcpdomain"
+
+#. Description of the plugin
+msgid "A truly amazing plugin."
+msgstr "একটি সত্যিই আশ্চর্যজনক প্লাগইন."
+
+#: our-first-unique-plugin.php:58
+msgid "characters"
+msgstr "চরিত্র"
+
+#. Author URI of the plugin
+msgid "http://jayanta.me"
+msgstr "http://jayanta.me"
+
+#. Author of the plugin
+msgid "Jayanta"
+msgstr "জায়ান্ট"
+
+#. Name of the plugin
+msgid "Our Test Plugin"
+msgstr "আমাদের টেস্ট প্লাগইন"
+
+#: our-first-unique-plugin.php:54 our-first-unique-plugin.php:58
+msgid "This post has"
+msgstr "এই পোস্ট আছে"
+
+#: our-first-unique-plugin.php:62
+msgid "This post will take about"
+msgstr "এই পোস্ট সম্পর্কে নিতে হবে"
+
+#: our-first-unique-plugin.php:138
+msgid "Word Count"
+msgstr "Word Count"
+
+#: our-first-unique-plugin.php:54
+msgid "words"
+msgstr "শব্দ"
