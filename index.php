@@ -10,6 +10,7 @@
 
 if( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
+// Blueprint or Class
 class AreYouPayingAttention {
 
     function __construct() {
@@ -22,4 +23,5 @@ class AreYouPayingAttention {
 
 }
 
+// Object
 $areYouPayingAttention = new AreYouPayingAttention();

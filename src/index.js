@@ -39,7 +39,7 @@ wp.blocks.registerBlockType("ourplugin/are-you-paying-attention", {
             //     <h5>H5 on the frontend.</h5>
             // </>
 
-            <p>Today the sky is <span className="skyColor">{ props.attributes.skyColor }</span> and the grass is <span className="grassColor">{ props.attributes.grassColor }</span>.</p>
+            <h3>Today the sky is <span className="skyColor">{ props.attributes.skyColor }</span> and the grass is <span className="grassColor">{ props.attributes.grassColor }</span>.</h3>
         );
     }
 });
