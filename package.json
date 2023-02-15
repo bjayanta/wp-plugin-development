@@ -1,24 +1,16 @@
 {
-  "name": "are-you-paying-attention",
+  "name": "our-multiple-choice",
   "version": "1.0.0",
-  "description": "",
+  "description": "Install Node module",
   "main": "test.js",
   "scripts": {
     "build": "wp-scripts build",
     "start": "wp-scripts start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bjayanta/wp-plugin-development.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bjayanta/wp-plugin-development/issues"
-  },
-  "homepage": "https://github.com/bjayanta/wp-plugin-development#readme",
   "devDependencies": {
     "@wordpress/scripts": "^25.3.0"
   }
