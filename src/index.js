@@ -1,13 +1,35 @@
 import "./index.scss";
 import { TextControl, Flex, FlexBlock, FlexItem, Button, Icon } from "@wordpress/components";
 
+// imediatly invocked expression function
+(function() {
+    let locked = false;
+
+    wp.data.subscribe(function() {
+        // console.log("Hello");
+        const results = wp.data.select("core/block-editor").getBlocks().filter(function(block) {
+            return block.name == "ourplugin/are-you-paying-attention" && block.attributes.correctAnswer == undefined;
+        });
+
+        if(results.length && locked == false) {
+            locked = true;
+            wp.data.dispatch("core/editor").lockPostSaving("noanswer");
+        }
+
+        if(!results.length && locked) {
+            locked = false;
+            wp.data.dispatch("core/editor").unlockPostSaving("noanswer");
+        }
+    });
+})();
+
 wp.blocks.registerBlockType("ourplugin/are-you-paying-attention", {
     title: "Are You Paying Attention",
     icon: "smiley",
     category: "common",
     attributes: {
         question: {type: "string"},
-        answers: {type: "array", default: ["red", "orange", "third answer here"]},
+        answers: {type: "array", default: [""]},
         correctAnswer: {type: "number", default: undefined}
     },
     edit: EditComponent,
@@ -28,6 +50,12 @@ function EditComponent(props) {
         });
 
         props.setAttributes({answers: newAnswers});
+
+        if(indexToDelete == props.attributes.correctAnswer) {
+            props.setAttributes({
+                correctAnswer: undefined
+            });
+        }
     }
 
     function markAsCorrect(index) {
