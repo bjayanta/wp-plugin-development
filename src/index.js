@@ -1,5 +1,6 @@
 import "./index.scss";
-import { TextControl, Flex, FlexBlock, FlexItem, Button, Icon } from "@wordpress/components";
+import { TextControl, Flex, FlexBlock, FlexItem, Button, Icon, PanelBody, PanelRow } from "@wordpress/components";
+import { InspectorControl } from "@wordpress/block-editor";
 
 // imediatly invocked expression function
 (function() {

@@ -4,8 +4,8 @@
   "description": "Install Node module",
   "main": "test.js",
   "scripts": {
-    "build": "wp-scripts build",
-    "start": "wp-scripts start",
+    "build": "wp-scripts build src/index.js src/frontend.js",
+    "start": "wp-scripts start src/index.js src/frontend.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

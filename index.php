@@ -29,8 +29,15 @@ class MultipleChoiceQuize {
     }
 
     function theHTML($attributes) {
+        if(!is_admin()) {
+            wp_enqueue_script("attentionFrontend", plugin_dir_url(__FILE__) . 'build/frontend.js', ['wp-element']);
+            wp_enqueue_style("attentionFrontendStyle", plugin_dir_url(__FILE__) . 'build/frontend.css');
+        }
+
         ob_start(); ?>
-        <h3>Today the sky is <?php echo esc_html($attributes['skyColor']); ?> and the grass is <?php echo esc_html($attributes['grassColor']); ?> !!!</h3>
+        <div class="paying-attention-update-me">
+            <pre><?php echo wp_json_encode($attributes); ?></pre>
+        </div>
         <?php return ob_get_clean();
     }
 
