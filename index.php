@@ -18,12 +18,16 @@ class MultipleChoiceQuize {
     }
 
     function adminAssets() {
-        wp_register_style('quizeditcss', plugin_dir_url(__FILE__) . 'build/index.css');
-        wp_register_script('ournewblocktype', plugin_dir_url(__FILE__) . 'build/index.js', ['wp-blocks', 'wp-element', 'wp-editor']);
+        // wp_register_style('quizeditcss', plugin_dir_url(__FILE__) . 'build/index.css');
+        // wp_register_script('ournewblocktype', plugin_dir_url(__FILE__) . 'build/index.js', ['wp-blocks', 'wp-element', 'wp-editor']);
 
-        register_block_type('ourplugin/are-you-paying-attention', [
-            'editor_script' => 'ournewblocktype',
-            'editor_style' => 'quizeditcss',
+        // register_block_type('ourplugin/are-you-paying-attention', [
+        //     'editor_script' => 'ournewblocktype',
+        //     'editor_style' => 'quizeditcss',
+        //     'render_callback' => [$this, 'theHTML']
+        // ]);
+
+        register_block_type(__DIR__, [
             'render_callback' => [$this, 'theHTML']
         ]);
     }
